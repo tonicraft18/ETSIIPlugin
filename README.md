@@ -1,3 +1,3 @@
-# Bukkit Boilerplate
+# ETSII Plugin
 
-Sample project to create Plugins for Bukkit.
+Un plugin de minecraft hecho por y para estudiantes.
