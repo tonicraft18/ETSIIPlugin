@@ -10,7 +10,7 @@ public class MainPlugin extends JavaPlugin {
 
     @Override
     public void onEnable(){
-        Bukkit.broadcastMessage("All systems not offline :)");
+        Bukkit.broadcastMessage("All systems not polla offline :)");
         
     }
 
