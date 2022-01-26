@@ -13,7 +13,7 @@
     <url>https://github.com/2lstudios-mc/bukkit-boilerplate</url>
 
     <properties>
-        <author>tonicraft18</author>
+        <author>tonicraft18_elgameshd</author>
         <mainClass>dev.tc18.main.MainPlugin</mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
