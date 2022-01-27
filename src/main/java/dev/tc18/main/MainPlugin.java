@@ -31,7 +31,7 @@ public class MainPlugin extends JavaPlugin {
         if(command.getName().equalsIgnoreCase("rank")){
             if(p.getName().equals("ant22031") || p.getName().equals("alers16") || p.getName().equals("ElGamesHD") || p.getName().equals("Tonicraft18")){
                 if(!args[0].equals("")){
-                    p.setDisplayName(ChatColor.GOLD + "" +ChatColor.BOLD + "[" + args[0] + "]" + ChatColor.RESET + "" + ChatColor.GOLD + p.getName()+ChatColor.RESET);
+                    p.setDisplayName(ChatColor.GOLD + "" +ChatColor.BOLD + "[" + args[0] + "]" + ChatColor.RESET + " " + ChatColor.GOLD + p.getName()+ChatColor.RESET);
                     p.sendMessage(ChatColor.GREEN + "ok, tu nuevo rank va a ser: " + ChatColor.GOLD + "" + ChatColor.BOLD + "[" + args[0] + "]" + ChatColor.RESET + "" + ChatColor.GREEN + " :)");
                 }
             }else{
