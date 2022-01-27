@@ -8,3 +8,7 @@ commands:
   example:
     aliases: ["ex"]
     description: "This is an example plugin."
+  info:
+    aliases: ["information"]
+  rank:
+    description: ""

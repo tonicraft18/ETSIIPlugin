@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
 
     <!-- Plugin Information -->
-    <name>ETSII Plugin</name>
+    <name>ETSIIPlugin</name>
     <description>Plugin para gestiones </description>
     <version>0.0.1</version>
     <url>https://github.com/2lstudios-mc/bukkit-boilerplate</url>
@@ -39,7 +39,7 @@
     <!-- Build settings -->
     <build>
         <!-- Name of your compiled artifact -->
-        <finalName>${artifactId}</finalName>
+        <finalName>${project.artifactId}</finalName>
         <!-- Directory of .java files -->
         <sourceDirectory>src/main/java</sourceDirectory>
         <!-- Clean old builds and install dependencies before compile -->
@@ -62,8 +62,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>16</source>
+                    <target>16</target>
                 </configuration>
             </plugin>
 
