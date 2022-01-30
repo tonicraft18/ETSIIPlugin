@@ -10,5 +10,6 @@ commands:
     description: "This is an example plugin."
   info:
     aliases: ["information"]
+    description: "Información del servidor"
   rank:
-    description: ""
+    description: "Editor de rangos (solo administradores)"
