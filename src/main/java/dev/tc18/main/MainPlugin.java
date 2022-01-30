@@ -5,14 +5,24 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import dev.tc18.main.chat.Chat;
 
-public class MainPlugin extends JavaPlugin {
+public class MainPlugin extends JavaPlugin implements Listener {
 
-    @Override
     public void onEnable(){
         Bukkit.broadcastMessage("All systems online :)");
+        registerListeners();
+    }
+    
+    void registerListeners() {
+    	PluginManager pm = Bukkit.getServer().getPluginManager();
+    	 
+        pm.registerEvents(this, this);
+        pm.registerEvents(new Chat(this), this);
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
