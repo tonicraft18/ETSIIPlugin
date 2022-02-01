@@ -56,17 +56,17 @@ public class RankSystem extends BukkitRunnable implements CommandExecutor {
     					if(args[2].equalsIgnoreCase("usuario")) {
     						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission unset rank.admin");
     						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission unset rank.profesor");
-    						Bukkit.broadcastMessage("§e§l>> §fEl jugador " + MainPlugin.getPlayerRank(s) + " §e" + sender.getName() + " §f le ha establecido el rango §7§lUSUARIO§f a §e" + p.getName());
+    						Bukkit.broadcastMessage("§e§l>> §fEl jugador " + MainPlugin.getPlayerRank(s) + "§e" + sender.getName() + "§f le ha establecido el rango §7§lUSUARIO§f a §e" + p.getName());
     					}
     					else if(args[2].equalsIgnoreCase("admin")) {
     						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set rank.admin");
     						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission unset rank.profesor");
-    						Bukkit.broadcastMessage("§e§l>> §fEl jugador " + MainPlugin.getPlayerRank(s) + " §e" + sender.getName() + " §f le ha establecido el rango §c§lADMIN§f a §e" + p.getName());
+    						Bukkit.broadcastMessage("§e§l>> §fEl jugador " + MainPlugin.getPlayerRank(s) + "§e" + sender.getName() + "§f le ha establecido el rango §c§lADMIN§f a §e" + p.getName());
     					}	
     					else if(args[2].equalsIgnoreCase("profesor")) {
     						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set rank.admin");
     						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set rank.profesor");
-    						Bukkit.broadcastMessage("§e§l>> §fEl jugador " + MainPlugin.getPlayerRank(s) + " §e" + sender.getName() + " §f le ha establecido el rango §4§lPROFESOR§f a §e" + p.getName());
+    						Bukkit.broadcastMessage("§e§l>> §fEl jugador " + MainPlugin.getPlayerRank(s) + "§e" + sender.getName() + "§f le ha establecido el rango §4§lPROFESOR§f a §e" + p.getName());
     					}	
     				}
     			}
