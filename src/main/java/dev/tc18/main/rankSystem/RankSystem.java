@@ -1,11 +1,15 @@
 package dev.tc18.main.rankSystem;
 
+import java.util.HashMap;
+import java.util.UUID;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.permissions.PermissionAttachment;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
@@ -42,15 +46,36 @@ public class RankSystem extends BukkitRunnable implements CommandExecutor {
     					sender.sendMessage("§e§l» §4§lPROFESOR§f: Rango para el profesor.");
     					sender.sendMessage("");
     				}
-    			}	
+    				else if(args[0].equalsIgnoreCase("set")) {
+    					sender.sendMessage("§e§l>> §fUso correcto: §b/rank set <jugador> <rango>");
+    				}
+    			}
+    			else if(args.length == 2) {
+    				sender.sendMessage("§e§l>> §fUso correcto: §b/rank set " + sender.getName() + " <rango>");
+    			}
+    			else if(args.length == 3) {
+    				if(Bukkit.getServer().getPlayer(args[1]) == null) sender.sendMessage("§c§l>> §4El jugador §n" + args[1] + "§r§4 no está conectado.");
+    				else {
+    					Player p = (Player) Bukkit.getServer().getPlayer(args[1]);
+    					if(args[2].equalsIgnoreCase("usuario")) {
+
+    					}	
+    				}
+    			}
     		}
     	}
         return true;
     }
     
     public String getPlayerRank(Player p) {
-    	String r = "";
-    	if(p.hasPermission("")) return "a";
+    	String r = "§7§lUSUARIO";
+    	
+    	if(p.hasPermission("rank.admin")) {
+    		r = "§c§lADMIN";
+    		if(p.hasPermission("rank.profesor")) {
+    			r = "§4§lPROFESOR";
+    		}
+    	}
 		return r;
     }
 
