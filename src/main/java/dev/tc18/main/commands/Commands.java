@@ -1,6 +1,7 @@
 package dev.tc18.main.commands;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,6 +15,10 @@ public class Commands implements CommandExecutor {
 
     public Commands(MainPlugin main){
         this.main = main;
+    }
+
+    public void tp(Player p,double x,double y,double z){
+        p.teleport(new Location(p.getWorld(), x, y, z));
     }
 
     @Override
@@ -30,14 +35,29 @@ public class Commands implements CommandExecutor {
             ChatColor.GREEN + ChatColor.BOLD + "[ Redes Sociales ]");
         }
 
-        if(command.getName().equalsIgnoreCase("rank")){
-            if(p.getName().equals("ant22031") || p.getName().equals("alers16") || p.getName().equals("ElGamesHD") || p.getName().equals("Tonicraft18")){
-                if(!args[0].equals("")){
-                    p.setDisplayName(ChatColor.GOLD + "" +ChatColor.BOLD + "[" + args[0] + "]" + ChatColor.RESET + " " + ChatColor.GOLD + p.getName()+ChatColor.RESET);
-                    p.sendMessage(ChatColor.GREEN + "ok, tu nuevo rank va a ser: " + ChatColor.GOLD + "" + ChatColor.BOLD + "[" + args[0] + "]" + ChatColor.RESET + "" + ChatColor.GREEN + " :)");
+        //hay que terminarlo
+
+        if(command.getName().equalsIgnoreCase("go")){
+            if(!args[0].equalsIgnoreCase("")){
+                switch(args[0].toLowerCase()){
+                    case "7-seg": {
+                        
+                    } break;
+
+                    case "14-seg": {
+
+                    } break;
+
+                    case "alu": {
+                        
+                    } break;
+
+                    case "museo":{
+
+                    } break;
                 }
             }else{
-                p.sendMessage(ChatColor.RED + "No tienes permiso para usar este comando.");
+                p.sendMessage("§cNo se ha podido ejecutar el comando");
             }
         }
         return true;
