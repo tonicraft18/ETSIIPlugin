@@ -31,9 +31,10 @@ public class MainPlugin extends JavaPlugin implements Listener {
     	
     	if(p.hasPermission("rank.admin")) {
     		r = "§c§lADMIN";
-    	}else if(p.hasPermission("rank.profesor")) {
-            r = "§4§lPROFESOR";
-        }
+            if(p.hasPermission("rank.profesor")) {
+                r = "§4§lPROFESOR";
+            }
+    	}
 		return r;
     }
     
