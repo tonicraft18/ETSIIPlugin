@@ -35,14 +35,16 @@ public class Commands implements CommandExecutor {
             ChatColor.GREEN + ChatColor.BOLD + "[ Redes Sociales ]");
         }
 
-        //hay que terminarlo
+        //coordenadas provisionaless
 
         if(command.getName().equalsIgnoreCase("go")){
             if(!args[0].equalsIgnoreCase("")){
                 if(args[0].equalsIgnoreCase("7-seg")){
-                    //tp(p.getWorld(),x,y,z);
-                }else if(true){
-
+                    tp(p,79,-52,-24);
+                }else if(args[0].equalsIgnoreCase("alu")){
+                    tp(p,57,-60,-72);
+                }else if(args[0].equalsIgnoreCase("14-seg")){
+                    tp(p,-51,-60,3);
                 }
             }else{
                 p.sendMessage("§cNo se ha podido ejecutar el comando");
