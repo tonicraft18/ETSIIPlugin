@@ -45,6 +45,10 @@ public class Commands implements CommandExecutor {
                     tp(p,57,-60,-72);
                 }else if(args[0].equalsIgnoreCase("14-seg")){
                     tp(p,-51,-60,3);
+                }else if(args[0].equalsIgnoreCase("grefg")){
+                    p.sendMessage("§4Mira esto... §9§nhttps://www.youtube.com/watch?v=tvoh8bVTLUQ");
+                }else{
+                    p.sendMessage("§cArgumento del comando \"/go\" no válido");
                 }
             }else{
                 p.sendMessage("§cNo se ha podido ejecutar el comando");
