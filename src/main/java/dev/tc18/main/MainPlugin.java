@@ -21,8 +21,7 @@ public class MainPlugin extends JavaPlugin implements Listener {
     	PluginManager pm = Bukkit.getServer().getPluginManager();
         pm.registerEvents(new Chat(this), this);
     }
-
-
+    
     //Procesa los comandos
     public void comExecutor(){
         this.getCommand("rank").setExecutor(new RankSystem(this));
