@@ -32,7 +32,7 @@ public class Commands implements CommandExecutor {
             " asignatura Fundamentos de Electrónica, más una Unidad Aritmetico-Lógica, en Minecraft con la lógica"+
             " implementada dentro de este juego. Este proyecto está explicado en el siguiente video de "+
             ChatColor.RESET + "You" + ChatColor.RED + "Tube" + ChatColor.LIGHT_PURPLE + ": <link>\n\n"+
-            ChatColor.GREEN + ChatColor.BOLD + "[ Redes Sociales ]");
+            ChatColor.GREEN + ChatColor.BOLD + "\t- ETSIIPlugin");
         }
 
         //coordenadas provisionaless
