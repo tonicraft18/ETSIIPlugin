@@ -57,8 +57,21 @@ public class RankSystem extends BukkitRunnable implements CommandExecutor {
     				if(Bukkit.getServer().getPlayer(args[1]) == null) sender.sendMessage("§c§l>> §4El jugador §n" + args[1] + "§r§4 no está conectado.");
     				else {
     					Player p = (Player) Bukkit.getServer().getPlayer(args[1]);
+    					Player s = (Player) sender;
     					if(args[2].equalsIgnoreCase("usuario")) {
-
+    						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission unset rank.admin");
+    						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission unset rank.profesor");
+    						Bukkit.broadcastMessage("§e§l>> §fEl jugador " + MainPlugin.getPlayerRank(s) + " §e" + sender.getName() + " §f le ha establecido el rango §7§lUSUARIO§f a §e" + p.getName());
+    					}
+    					else if(args[2].equalsIgnoreCase("admin")) {
+    						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set rank.admin");
+    						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission unset rank.profesor");
+    						Bukkit.broadcastMessage("§e§l>> §fEl jugador " + MainPlugin.getPlayerRank(s) + " §e" + sender.getName() + " §f le ha establecido el rango §c§lADMIN§f a §e" + p.getName());
+    					}	
+    					else if(args[2].equalsIgnoreCase("profesor")) {
+    						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set rank.admin");
+    						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission set rank.profesor");
+    						Bukkit.broadcastMessage("§e§l>> §fEl jugador " + MainPlugin.getPlayerRank(s) + " §e" + sender.getName() + " §f le ha establecido el rango §4§lPROFESOR§f a §e" + p.getName());
     					}	
     				}
     			}
@@ -66,31 +79,19 @@ public class RankSystem extends BukkitRunnable implements CommandExecutor {
     	}
         return true;
     }
-    
-    public String getPlayerRank(Player p) {
-    	String r = "§7§lUSUARIO";
-    	
-    	if(p.hasPermission("rank.admin")) {
-    		r = "§c§lADMIN";
-    		if(p.hasPermission("rank.profesor")) {
-    			r = "§4§lPROFESOR";
-    		}
-    	}
-		return r;
-    }
 
 	@SuppressWarnings("deprecation")
 	@Override
 	public void run() {
 		for(Player p: Bukkit.getOnlinePlayers()) {
 			Scoreboard board = p.getScoreboard();
-			Team t = board.getTeam(getPlayerRank(p));
+			Team t = board.getTeam(MainPlugin.getPlayerRank(p));
 	    			  
 			if(t == null){
-				t = board.registerNewTeam(getPlayerRank(p));  
+				t = board.registerNewTeam(MainPlugin.getPlayerRank(p));  
 			}
 	    		  
-			t.setPrefix(getPlayerRank(p));
+			t.setPrefix(MainPlugin.getPlayerRank(p));
 	    	
 			if(!t.hasPlayer(p)) {
 				t.addPlayer(p);
