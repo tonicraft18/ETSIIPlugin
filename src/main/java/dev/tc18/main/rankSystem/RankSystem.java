@@ -51,7 +51,7 @@ public class RankSystem extends BukkitRunnable implements CommandExecutor {
     				}
     			}
     			else if(args.length == 2) {
-    				sender.sendMessage("§e§l>> §fUso correcto: §b/rank set " + sender.getName() + " <rango>");
+    				sender.sendMessage("§e§l>> §fUso correcto: §b/rank set " + args[1] + " <rango>");
     			}
     			else if(args.length == 3) {
     				if(Bukkit.getServer().getPlayer(args[1]) == null) sender.sendMessage("§c§l>> §4El jugador §n" + args[1] + "§r§4 no está conectado.");

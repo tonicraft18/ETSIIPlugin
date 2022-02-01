@@ -13,6 +13,9 @@ public class MainPlugin extends JavaPlugin implements Listener {
 
     public void onEnable(){
         Bukkit.broadcastMessage("All systems online :)");
+        
+        new RankSystem(this).runTaskTimer(this, 20, 20);
+        
         registerListeners();
         comExecutor();
     }
