@@ -39,22 +39,10 @@ public class Commands implements CommandExecutor {
 
         if(command.getName().equalsIgnoreCase("go")){
             if(!args[0].equalsIgnoreCase("")){
-                switch(args[0].toLowerCase()){
-                    case "7-seg": {
-                        
-                    } break;
+                if(args[0].equalsIgnoreCase("7-seg")){
+                    //tp(p.getWorld(),x,y,z);
+                }else if(true){
 
-                    case "14-seg": {
-
-                    } break;
-
-                    case "alu": {
-                        
-                    } break;
-
-                    case "museo":{
-
-                    } break;
                 }
             }else{
                 p.sendMessage("§cNo se ha podido ejecutar el comando");

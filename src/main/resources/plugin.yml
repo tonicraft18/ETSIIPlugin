@@ -5,11 +5,10 @@ main: ${mainClass}
 version: ${version}
 url: ${url}
 commands:
-  example:
-    aliases: ["ex"]
-    description: "This is an example plugin."
   info:
     aliases: ["information"]
-    description: "Información del servidor"
+    description: "Información general del servidor"
   rank:
     description: "Editor de rangos (solo administradores)"
+  go:
+    description: "Comando para teletransortarse a lugares representativos"

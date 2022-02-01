@@ -8,9 +8,9 @@
 
     <!-- Plugin Information -->
     <name>ETSIIPlugin</name>
-    <description>Plugin para gestiones </description>
+    <description>Plugin para gestionar el servidor relacionado con la electrónica en la ETSII</description>
     <version>0.0.1</version>
-    <url>https://github.com/2lstudios-mc/bukkit-boilerplate</url>
+    <url>https://github.com/tonicraft18/ETSIIPlugin</url>
 
     <properties>
         <author>tonicraft18_elgameshd</author>
