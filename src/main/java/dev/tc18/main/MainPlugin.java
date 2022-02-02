@@ -27,12 +27,12 @@ public class MainPlugin extends JavaPlugin implements Listener {
     }
     
     public static String getPlayerRank(Player p) {
-    	String r = "§7§l[USUARIO]";
+    	String r = "§7§l[USUARIO] ";
     	
     	if(p.hasPermission("rank.admin")) {
-    		r = "§c§l[ADMIN]";
+    		r = "§c§l[ADMIN] ";
             if(p.hasPermission("rank.profesor")) {
-                r = "§4§l[PROFESOR]";
+                r = "§4§l[PROFESOR] ";
             }
     	}
 		return r;

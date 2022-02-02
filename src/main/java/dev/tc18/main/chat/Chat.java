@@ -20,19 +20,19 @@ public class Chat implements Listener {
 	@EventHandler
 	public void onPlayerChat(AsyncPlayerChatEvent event) {
 		Player p = (Player) event.getPlayer();
-		event.setFormat(MainPlugin.getPlayerRank(p) + "§e " + p.getName() + "§f: " + event.getMessage());
+		event.setFormat(MainPlugin.getPlayerRank(p) + "§e" + p.getName() + "§f: " + event.getMessage());
 	}
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event){
 		Player p = (Player) event.getPlayer();
-		event.setJoinMessage("§6§k!! " + MainPlugin.getPlayerRank(p) + "§r§6 " + p.getName() + " ha entrado al servidor §k!!");
+		event.setJoinMessage("§6§k!! " + MainPlugin.getPlayerRank(p) + "§r§6" + p.getName() + " ha entrado al servidor §k!!");
 	}
 
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event){
 		Player p = (Player) event.getPlayer();
-		event.setQuitMessage(MainPlugin.getPlayerRank(p) + "§4 " + p.getName() + " ha salido del servidor :(");
+		event.setQuitMessage(MainPlugin.getPlayerRank(p) + "§4" + p.getName() + " ha salido del servidor :(");
 	}
 	
 }
