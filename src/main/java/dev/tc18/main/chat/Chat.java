@@ -10,12 +10,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import dev.tc18.main.MainPlugin;
 
 public class Chat implements Listener {
-	
-	private MainPlugin main;
-	
-	public Chat(MainPlugin main){
-		this.main = main;
-	}
     
 	@EventHandler
 	public void onPlayerChat(AsyncPlayerChatEvent event) {
@@ -32,7 +26,7 @@ public class Chat implements Listener {
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event){
 		Player p = (Player) event.getPlayer();
-		event.setQuitMessage(MainPlugin.getPlayerRank(p) + "§4" + p.getName() + " ha salido del servidor :(");
+		event.setQuitMessage(MainPlugin.getPlayerRank(p) + "§4" + p.getName() + " ha salido del servidor");
 	}
 	
 }

@@ -23,7 +23,7 @@ public class MainPlugin extends JavaPlugin implements Listener {
     
     public void registerListeners() {
     	PluginManager pm = Bukkit.getServer().getPluginManager();
-        pm.registerEvents(new Chat(this), this);
+        pm.registerEvents(new Chat(), this);
     }
     
     public static String getPlayerRank(Player p) {

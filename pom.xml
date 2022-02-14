@@ -8,8 +8,8 @@
 
     <!-- Plugin Information -->
     <name>ETSIIPlugin</name>
-    <description>Plugin para gestionar el servidor relacionado con la electrónica en la ETSII</description>
-    <version>0.0.1</version>
+    <description>Plugin para gestionar el servidor relacionado con la electrónica en la ETSII (aún en fase alpha)</description>
+    <version>0.1.1</version>
     <url>https://github.com/tonicraft18/ETSIIPlugin</url>
 
     <properties>
