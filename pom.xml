@@ -8,12 +8,12 @@
 
     <!-- Plugin Information -->
     <name>ETSIIPlugin</name>
-    <description>Plugin para gestionar el servidor relacionado con la electrónica en la ETSII (aún en fase alpha)</description>
+    <description>Plugin para gestionar el servidor relacionado con la electrónica en la ETSII (aún en fase de desarrollo)</description>
     <version>0.1.1</version>
     <url>https://github.com/tonicraft18/ETSIIPlugin</url>
 
     <properties>
-        <author>tonicraft18_elgameshd</author>
+        <author>tonicraft18_elgamesHD</author>
         <mainClass>dev.tc18.main.MainPlugin</mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

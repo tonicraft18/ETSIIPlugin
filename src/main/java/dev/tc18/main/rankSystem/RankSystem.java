@@ -13,13 +13,6 @@ import dev.tc18.main.MainPlugin;
 
 public class RankSystem extends BukkitRunnable implements CommandExecutor {
 	
-	@SuppressWarnings("unused")
-	private MainPlugin main;
-	
-	public RankSystem(MainPlugin main){
-		this.main = main;
-	}
-	
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
     	if(cmd.getName().equalsIgnoreCase("rank")) {
     		if(sender.hasPermission("rank.admin")) {

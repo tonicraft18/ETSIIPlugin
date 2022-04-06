@@ -15,7 +15,7 @@ public class MainPlugin extends JavaPlugin implements Listener {
     public void onEnable(){
         Bukkit.broadcastMessage("All systems online :)");
         
-        new RankSystem(this).runTaskTimer(this, 20, 20);
+        new RankSystem().runTaskTimer(this, 20, 20);
         
         registerListeners();
         comExecutor();
@@ -31,7 +31,7 @@ public class MainPlugin extends JavaPlugin implements Listener {
     	
     	if(p.hasPermission("rank.admin")) {
     		r = "§c§l[ADMIN] ";
-            if(p.hasPermission("rank.profesor")) {
+            if(p.hasPermission("rank.profesor") && p.getName().equalsIgnoreCase("teutue")) {
                 r = "§4§l[PROFESOR] ";
             }
     	}
@@ -40,9 +40,9 @@ public class MainPlugin extends JavaPlugin implements Listener {
     
     //Procesa los comandos
     public void comExecutor(){
-        this.getCommand("rank").setExecutor(new RankSystem(this));
-        this.getCommand("info").setExecutor(new Commands(this));
-        this.getCommand("go").setExecutor(new Commands(this));
+        this.getCommand("rank").setExecutor(new RankSystem());
+        this.getCommand("info").setExecutor(new Commands());
+        this.getCommand("go").setExecutor(new Commands());
     }
 
 }

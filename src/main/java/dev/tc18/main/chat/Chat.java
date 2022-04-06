@@ -20,6 +20,7 @@ public class Chat implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event){
 		Player p = (Player) event.getPlayer();
+		p.sendMessage("§9Bienvenido al servidor de minecraft para proyectos relacionados con la electrónica\n\n");
 		event.setJoinMessage("§6§k!! " + MainPlugin.getPlayerRank(p) + "§r§6" + p.getName() + " ha entrado al servidor §k!!");
 	}
 
