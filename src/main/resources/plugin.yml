@@ -12,5 +12,7 @@ commands:
     description: Editor de rangos
     permission-message: No tienes permiso para usar este comando
   go:
-    usage: /<command> [7-seg|alu|14-seg]
+    usage: /<command> [7-seg | alu | 14-seg]
     description: "Comando para teletransortarse a lugares representativos"
+  login:
+    usage: /

@@ -9,6 +9,8 @@ import org.bukkit.entity.Player;
 
 public class Commands implements CommandExecutor {
 
+    String[][] matriz = {{"ElGamesHD","alers16","ant22031","Tonicraft19","TeuTue","_alexcorbacho"},{"logi1243","romano2","caniete","jajayoxd","electronica101","corbayaeger"}};
+
     public void tp(Player p,double x,double y,double z){
         p.teleport(new Location(p.getWorld(), x, y, z));
     }
@@ -46,6 +48,19 @@ public class Commands implements CommandExecutor {
                 p.sendMessage("§cNo se ha podido ejecutar el comando");
             }
         }
+
+        
         return true;
     }
+
+    private int SearchName(String[][] matriz,Player p){
+		int i=0;
+		
+		while(i < matriz[0].length && !p.getName().equals(matriz[0][i])) i++;
+
+		if (i == matriz[0].length){
+			i = -1;
+		}
+		return i;
+	}
 }
