@@ -15,7 +15,8 @@ import org.bukkit.potion.PotionEffectType;
 
 public class Login implements Listener, CommandExecutor{
     
-    String[][] matriz = {{"ElGamesHD","alers16","ant22031","Tonicraft18","TeuTue","_alexcorbacho"},{"logi1243","romano2","caniete","jajayoxd","electronica101","corbayaeger"}};
+    String[][] matriz = {{"ElGamesHD","alers16","ant22031","Tonicraft18","TeuTue","_alexcorbacho"},
+    {"logi1243","romano2","caniete","jajayoxd","electronica101","corbayaeger"}};
 	double x, y, z;
 
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
@@ -63,6 +64,7 @@ public class Login implements Listener, CommandExecutor{
 			this.y = p.getLocation().getY();
 			this.z = p.getLocation().getZ();
 			p.teleport(new Location(p.getWorld(),8, 128, -73));
+            p.setGameMode(GameMode.ADVENTURE);
 			if(index == -1){
 				Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission unset rank.admin");
 				Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission unset rank.profesor");
