@@ -17,7 +17,7 @@ public class Login implements Listener, CommandExecutor{
     
     String[][] matriz = {{"ElGamesHD","alers16","ant22031","Tonicraft18","TeuTue","_alexcorbacho"},
     {"logi1243","romano2","caniete","jajayoxd","electronica101","corbayaeger"}};
-	double x, y, z;
+	Location l;
 
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
 		Player p = (Player) sender;
@@ -27,7 +27,7 @@ public class Login implements Listener, CommandExecutor{
                 if(args[0].equals(matriz[1][pos])){
 					p.setOp(true);
 					p.sendMessage("§aSe ha logueado correctamente");
-					p.teleport(new Location(p.getWorld(), this.x, this.y, this.z));
+					p.teleport(l);
 					p.setGameMode(GameMode.CREATIVE);
 				}else{
 					p.sendMessage("§cLa contraseña es errónea, inténtelo de nuevo");
@@ -60,9 +60,7 @@ public class Login implements Listener, CommandExecutor{
 		p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 99999999, 255));
 		if(p.hasPermission("rank.admin")){
 			p.setOp(false);
-			this.x = p.getLocation().getX();
-			this.y = p.getLocation().getY();
-			this.z = p.getLocation().getZ();
+			l = p.getLocation();
 			p.teleport(new Location(p.getWorld(),8, 128, -73));
             p.setGameMode(GameMode.ADVENTURE);
 			if(index == -1){
@@ -76,4 +74,4 @@ public class Login implements Listener, CommandExecutor{
 		}
 		
 	}
-}
+} 
