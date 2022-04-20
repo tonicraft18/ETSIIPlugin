@@ -52,15 +52,4 @@ public class Commands implements CommandExecutor {
         
         return true;
     }
-
-    private int SearchName(String[][] matriz,Player p){
-		int i=0;
-		
-		while(i < matriz[0].length && !p.getName().equals(matriz[0][i])) i++;
-
-		if (i == matriz[0].length){
-			i = -1;
-		}
-		return i;
-	}
 }
