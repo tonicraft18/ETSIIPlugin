@@ -15,9 +15,9 @@ import org.bukkit.potion.PotionEffectType;
 
 public class Login implements Listener, CommandExecutor{
     
-    String[][] matriz = {{"ElGamesHD","alers16","ant22031","Tonicraft18","TeuTue","_alexcorbacho"},
+    private String[][] matriz = {{"ElGamesHD","alers16","ant22031","Tonicraft18","TeuTue","_alexcorbacho"},
     {"logi1243","romano2","caniete","jajayoxd","electronica101","corbayaeger"}};
-	Location l;
+	private Location l;
 
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
 		Player p = (Player) sender;

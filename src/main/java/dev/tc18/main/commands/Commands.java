@@ -9,8 +9,6 @@ import org.bukkit.entity.Player;
 
 public class Commands implements CommandExecutor {
 
-    String[][] matriz = {{"ElGamesHD","alers16","ant22031","Tonicraft19","TeuTue","_alexcorbacho"},{"logi1243","romano2","caniete","jajayoxd","electronica101","corbayaeger"}};
-
     public void tp(Player p,double x,double y,double z){
         p.teleport(new Location(p.getWorld(), x, y, z));
     }
