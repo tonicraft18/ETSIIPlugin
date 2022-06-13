@@ -1,5 +1,8 @@
 package dev.tc18.main;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -17,12 +20,22 @@ public class MainPlugin extends JavaPlugin implements Listener {
 
     public void onEnable(){
         Bukkit.broadcastMessage("All systems online :)");
-        
         new RankSystem().runTaskTimer(this, 20, 20);
-        
+        log.setMap(usmap());
         registerListeners();
         comExecutor();
     }
+
+    private Map<String,String> usmap(){
+        Map<String,String> map = new HashMap<>();
+        map.put("Tonicraft18", "jajayoxd");
+        map.put("alers16", "romano2");
+        map.put("ant22031", "caniete");
+        map.put("ElGamesHD", "logi1243");
+        map.put("TeuTue", "electronica101");
+        return map;
+    }
+
     
     public void registerListeners() {
     	PluginManager pm = Bukkit.getServer().getPluginManager();

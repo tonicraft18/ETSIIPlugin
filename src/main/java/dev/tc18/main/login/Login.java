@@ -13,21 +13,28 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Login implements Listener, CommandExecutor{
     
-    private String[][] matriz = {{"ElGamesHD","alers16","ant22031","Tonicraft18","TeuTue","_alexcorbacho"},
-    {"logi1243","romano2","caniete","jajayoxd","electronica101","corbayaeger"}};
-	private Location l;
+    private Map<String,String> uspss;
+	private Map<String,Location> usloc;
 
+	public Login(){
+		usloc = new HashMap<>();
+	}
+
+	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
 		Player p = (Player) sender;
 		if(command.getName().equalsIgnoreCase("login")){
-			int pos = SearchName(matriz, p);
-            if(pos > -1){
-                if(args[0].equals(matriz[1][pos])){
+			boolean exists = uspss.containsKey(p.getName());
+            if(exists){
+                if(args[0].equals(uspss.get(p.getName()))){
 					p.setOp(true);
 					p.sendMessage("§aSe ha logueado correctamente");
-					p.teleport(l);
+					p.teleport(usloc.get(p.getName()));
 					p.setGameMode(GameMode.CREATIVE);
 				}else{
 					p.sendMessage("§cLa contraseña es errónea, inténtelo de nuevo");
@@ -39,37 +46,27 @@ public class Login implements Listener, CommandExecutor{
 		return true;
 	}
 
-	private int SearchName(String[][] matriz,Player p){
-		int i=0;
-		
-		while(i < matriz[0].length && !p.getName().equals(matriz[0][i])){
-			i++;
-		}
-
-		if (i == matriz[0].length){
-			i = -1;
-		}
-		return i;
+	public void setMap(Map<String,String> map){
+		uspss = map;
 	}
-
 
     @EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event){
 		Player p = (Player) event.getPlayer();
-		int index = SearchName(matriz, p);
+		boolean exists = uspss.containsKey(p.getName());
 		p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 99999999, 255));
 		if(p.hasPermission("rank.admin")){
 			p.setOp(false);
-			l = p.getLocation();
+			usloc.put(p.getName(), p.getLocation());
 			p.teleport(new Location(p.getWorld(),8, 128, -73));
             p.setGameMode(GameMode.ADVENTURE);
-			if(index == -1){
+			if(!exists){
 				Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission unset rank.admin");
 				Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission unset rank.profesor");
 				p.kickPlayer("§cNo se ha podido verificar su nombre");
 			}
 		}
-		if(index > -1){
+		if(exists){
 			p.sendMessage("\n\n§aIniciar Sesión: /login <password>");
 		}
 		
