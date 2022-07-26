@@ -30,7 +30,7 @@ public class Commands implements CommandExecutor {
         //coordenadas provisionaless
 
         if(command.getName().equalsIgnoreCase("go")){
-            if(!args[0].equalsIgnoreCase("") || !p.isOp()){
+            if(!args[0].equalsIgnoreCase("") || p.isOp()){
                 if(args[0].equalsIgnoreCase("7-seg")){
                     tp(p,79,-52,-24);
                 }else if(args[0].equalsIgnoreCase("alu")){
