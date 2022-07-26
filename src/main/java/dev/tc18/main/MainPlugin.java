@@ -58,7 +58,7 @@ public class MainPlugin extends JavaPlugin implements Listener {
     //Procesa los comandos
     public void comExecutor(){
         this.getCommand("rank").setExecutor(new RankSystem());
-        this.getCommand("info").setExecutor(new Commands());
+        this.getCommand("information").setExecutor(new Commands());
         this.getCommand("go").setExecutor(new Commands());
         this.getCommand("login").setExecutor(log);
     }
