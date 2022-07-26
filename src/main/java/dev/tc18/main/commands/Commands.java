@@ -16,7 +16,7 @@ public class Commands implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player p = (Player) sender;
-        if(command.getName().equalsIgnoreCase("info")){
+        if(command.getName().equalsIgnoreCase("information")){
             p.sendMessage(ChatColor.GOLD + "" + ChatColor.BOLD + "[ Información del Servidor ]\n"+
             ChatColor.RESET+"Este servidor es posible gracias a \n- tonicraft18\n- alers16\n- ant22031\n- ElGamesHD\n- _alexcorbacho\n"+
             "- "+ChatColor.BLUE+" Universidad de Málaga."+

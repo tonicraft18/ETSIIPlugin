@@ -19,7 +19,7 @@ public class MainPlugin extends JavaPlugin implements Listener {
     Login log = new Login();
 
     public void onEnable(){
-        Bukkit.broadcastMessage("All systems online :)");
+        System.out.println("ETSII PLUGIN v 0.3 - Plugin desarrollado por prCalculadora :)");
         new RankSystem().runTaskTimer(this, 20, 20);
         log.setMap(usmap());
         registerListeners();
