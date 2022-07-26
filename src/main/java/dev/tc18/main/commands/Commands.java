@@ -18,8 +18,8 @@ public class Commands implements CommandExecutor {
         Player p = (Player) sender;
         if(command.getName().equalsIgnoreCase("info")){
             p.sendMessage(ChatColor.GOLD + "" + ChatColor.BOLD + "[ Información del Servidor ]\n"+
-            ChatColor.RESET+"Este servidor es posible gracias a <créditos>"+
-            ", y la "+ChatColor.BLUE+" Universidad de Málaga."+
+            ChatColor.RESET+"Este servidor es posible gracias a \n- tonicraft18\n- alers16\n- ant22031\n- ElGamesHD\n- _alexcorbacho\n"+
+            "- "+ChatColor.BLUE+" Universidad de Málaga."+
             ChatColor.RESET + ChatColor.LIGHT_PURPLE + "\nEste servidor recrea una práctica de la"+
             " asignatura Fundamentos de Electrónica, más una Unidad Aritmetico-Lógica (ALU), en Minecraft, con la lógica"+
             " implementada dentro de este juego. Este proyecto está explicado en el siguiente video de "+
@@ -30,7 +30,7 @@ public class Commands implements CommandExecutor {
         //coordenadas provisionaless
 
         if(command.getName().equalsIgnoreCase("go")){
-            if(!args[0].equalsIgnoreCase("")){
+            if(!args[0].equalsIgnoreCase("") || !p.isOp()){
                 if(args[0].equalsIgnoreCase("7-seg")){
                     tp(p,79,-52,-24);
                 }else if(args[0].equalsIgnoreCase("alu")){

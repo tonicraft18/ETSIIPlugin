@@ -54,7 +54,8 @@ public class Login implements Listener, CommandExecutor{
 	public void onPlayerJoin(PlayerJoinEvent event){
 		Player p = (Player) event.getPlayer();
 		boolean exists = uspss.containsKey(p.getName());
-		p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 99999999, 255));
+		p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 99999999, 255,false,false));
+		p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 99999999, 4,false,false));
 		if(p.hasPermission("rank.admin")){
 			p.setOp(false);
 			usloc.put(p.getName(), p.getLocation());
@@ -65,6 +66,8 @@ public class Login implements Listener, CommandExecutor{
 				Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission unset rank.profesor");
 				p.kickPlayer("§cNo se ha podido verificar su nombre");
 			}
+		}else{
+			p.teleport(new Location(p.getWorld(), -116, -57, -285));
 		}
 		if(exists){
 			p.sendMessage("\n\n§aIniciar Sesión: /login <password>");

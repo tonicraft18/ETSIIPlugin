@@ -5,8 +5,7 @@ main: ${mainClass}
 version: ${version}
 url: ${url}
 commands:
-  info:
-    aliases: ["information"]
+  information:
     description: "Información general del servidor"
   rank:
     description: Editor de rangos
